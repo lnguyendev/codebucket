@@ -1,5 +1,7 @@
 import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { store } from './state';
 import TextEditor from './components/text-editor';
 
 export const App = () => {
@@ -9,6 +11,8 @@ export const App = () => {
 };
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
